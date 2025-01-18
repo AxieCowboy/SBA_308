@@ -4,10 +4,19 @@ import UI from './ui.js';
 document.addEventListener("DOMContentLoaded", () => {
     const fetchButton = document.getElementById('fetch-rates');
     const searchButton = document.getElementById('search-rate');
+    const ratesContainer = document.getElementById('rates-container');
+
+    let ratesVisible = false; // Track visibility state
 
     fetchButton.addEventListener('click', async () => {
-        const rates = await CurrencyAPI.fetchRates();
-        UI.displayRates(rates);
+        if (ratesVisible) {
+            ratesContainer.innerHTML = ""; // Hide rates if visible
+            ratesVisible = false;
+        } else {
+            const rates = await CurrencyAPI.fetchRates();
+            UI.displayRates(rates);
+            ratesVisible = true;
+        }
     });
 
     searchButton.addEventListener('click', async () => {
