@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Exchange Rates</h1>
+        <input type="text" id="currency-input" placeholder="Enter currency code (e.g., EUR)">
+        <button id="search-rate">Search Rate</button>
+        <button id="fetch-rates">Get All Rates</button>
+        
+        <h2>Exchange Rates</h2>
+        <div id="rates-container"></div>
+        
+        <h2>Favorites</h2>
+        <ul id="favorites-list"></ul>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
